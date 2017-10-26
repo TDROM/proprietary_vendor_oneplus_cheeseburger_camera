@@ -1,0 +1,8 @@
+assert(getprop("ro.product.device") == "OnePlus5" || getprop("ro.build.product") == "OnePlus5" ||
+       getprop("ro.product.device") == "cheeseburger" || getprop("ro.build.product") == "cheeseburger" || abort("E3004: This package is for device: OnePlus5,cheeseburger; this device is " + getprop("ro.product.device") + "."););
+show_progress(0.750000, 10);
+ifelse(is_mounted("/system"), unmount("/system"));
+mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "");
+package_extract_dir("system", "/system");
+unmount("/system");
+set_progress(1.000000);
