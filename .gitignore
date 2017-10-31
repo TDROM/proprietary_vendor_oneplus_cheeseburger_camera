@@ -1,2 +1,10 @@
 .DS_Store
-*.zip
+
+/*.zip
+/*.apk
+/*.log
+
+/system
+/unsigned
+
+/*/build
