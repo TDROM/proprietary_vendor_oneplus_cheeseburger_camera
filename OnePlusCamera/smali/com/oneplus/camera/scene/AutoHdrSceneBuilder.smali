@@ -1,0 +1,39 @@
+.class public final Lcom/oneplus/camera/scene/AutoHdrSceneBuilder;
+.super Ljava/lang/Object;
+.source "AutoHdrSceneBuilder.java"
+
+# interfaces
+.implements Lcom/oneplus/camera/scene/SceneBuilder;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public createScene(Lcom/oneplus/camera/CameraActivity;)Lcom/oneplus/camera/scene/Scene;
+    .locals 1
+
+    invoke-virtual {p1}, Lcom/oneplus/camera/CameraActivity;->isServiceMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lcom/oneplus/camera/scene/AutoHdrScene;
+
+    invoke-direct {v0, p1}, Lcom/oneplus/camera/scene/AutoHdrScene;-><init>(Lcom/oneplus/camera/CameraActivity;)V
+
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
